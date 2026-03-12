@@ -139,9 +139,13 @@ const RippleGrid = ({
                 const totalWave = wave1 + wave2 + mouseWave + velocityInfluence;
 
                 // Calculate new position with wave offset
+                //const waveX = point.baseX + totalWave * (dx * 2);
+                //const waveY = point.baseY + totalWave * (dy * 2);
                 const waveX = point.baseX + totalWave * (dx * 2);
                 const waveY = point.baseY + totalWave * (dy * 2);
-
+                
+                point.x = waveX;
+                point.y = waveY;
                 return {
                     ...point,
                     wave: totalWave,
